@@ -52,7 +52,8 @@ class PostsController extends Controller
         $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
         $image->save();
 
-        //TODO: This error should be because of VSC. Tested on PHStorm and it's ok.
+        //TODO: This error should be because of VSC. Tested on PHStorm and all ok .
+        
         auth()->user()->posts()->create([
             'caption' => $data['caption'],
             'image' => $imagePath,
